@@ -10,17 +10,8 @@ export default async function createCharacter(
     try{
         const {name, gender, description} = req.body
 
-        // characters.push({
-        //     id: Date.now(),
-        //     name,
-        //     gender,
-        //     description
-        // })
-
         await connection("character")
             .insert({name, gender, description})
-
-
 
         resp.status(201).end()
     }catch(error){
