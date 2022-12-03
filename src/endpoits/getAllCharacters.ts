@@ -1,9 +1,22 @@
 import { Request, Response } from "express";
+import connection from "../connection";
+import { character } from "../types";
 
 
-export default function (
+export default async function (
     req: Request,
     resp:Response
-){
-    resp.send()
+):Promise<void>{
+
+    try{
+        
+        const name = req.query
+
+        const characters: character[] = await connection("character")
+
+
+        resp.send(characters)
+    }catch(error){
+        resp.status(500).send("Erro inesperado")
+    }
 }

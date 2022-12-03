@@ -1,19 +1,20 @@
 import { Request, Response } from "express";
+import connection from "../connection";
 
 
-export function deleteCharacter (
+export default async function deleteCharacter (
     req:Request, 
-    resp:Response):void {
+    resp:Response):Promise<void> {
     
-        const {id} = req.params
+        try{
+             const {id} = req.params
+            
+             await connection("character")
+                .delete()
+                .where({id})
         
-        // const index:number = characters.findIndex(
-        //     character => character.id === Number(id)
-        // )
-        
-        // if( index > -1){
-        //     characters.splice(index, 1)
-        // }
-        
-        resp.status(200).end()
+            resp.status(200).end()
+        }catch(error){
+            resp.status(500).send("Erro inesperado")
+        }
 }

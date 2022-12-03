@@ -1,6 +1,6 @@
 import { app } from "./app";
-import { createCharacter } from "./endpoits/createCharacters";
-import { deleteCharacter } from "./endpoits/deleteCharacter";
+import  createCharacter  from "./endpoits/createCharacters";
+import  deleteCharacter  from "./endpoits/deleteCharacter";
 import getAllCharacters from "./endpoits/getAllCharacters";
 
 
