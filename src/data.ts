@@ -1,7 +1,7 @@
 import { character, GENDER, movie } from "./types";
 
 
-export const movies: movie[] = [
+export let movies: movie[] = [
     {
         id: 1,
         title: "X-men: O filme",
@@ -10,10 +10,28 @@ export const movies: movie[] = [
 ]
 
 
-export const characters:character[] =[
+export let characters:character[] =[
     {
         id: 1,
         name: "Storm",
+        gender:GENDER.FEMALE,
+        description: "Melhor dos melhores"
+    },
+    {
+        id: 2,
+        name: "Homem aranha",
+        gender:GENDER.FEMALE,
+        description: "Melhor dos melhores"
+    },
+    {
+        id: 3,
+        name: "Mulher aranha",
+        gender:GENDER.FEMALE,
+        description: "Melhor dos melhores"
+    },
+    {
+        id: 4,
+        name: "Aranha Homem Mulher",
         gender:GENDER.FEMALE,
         description: "Melhor dos melhores"
     }
